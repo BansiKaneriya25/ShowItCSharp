@@ -9,6 +9,7 @@ namespace ConsoleApp3
         {
             Console.WriteLine($"First Arg: {args[0]}");
             //Need to connect with DB
+            //Need to connect with DB
             string connectionString = args[0].ToString();
             Console.ReadLine();
         }
