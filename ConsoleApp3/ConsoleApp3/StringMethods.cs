@@ -7,11 +7,12 @@ using System.Text;
 
 namespace ConsoleApp3
 {
+    //https://www.javatpoint.com/c-sharp-strings
     class StringMethods
     {
         static void Main(string[] args)
         {
-            //show
+            //https://www.javatpoint.com/c-sharp-strings
 
             //convert char to string
             char[] ch = { 's', 'h', 'o', 'w', ' ', 'i', 't' };//0 - 6
