@@ -2,7 +2,7 @@
 //using System.IO;
 
 //namespace ConsoleApp3
-//{
+//{ 
 //    class Recursion
 //    {
 //        static void Main(string[] args)

@@ -4,7 +4,7 @@
 //using System.Text;
 
 //namespace ConsoleApp3
-//{
+//{ 
 //    class String_StringBuilder
 //    {
 //        static void Main(string[] args)
