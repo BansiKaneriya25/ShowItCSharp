@@ -8,6 +8,8 @@
 //    public static class StaticClass
 //    {
 //        //Static
+//        //we can modify value in static constructor
+//        //we can assign value at the time of initilization or static construtor
 //        static int Calc = 1;
 
 //        static StaticClass()

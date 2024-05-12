@@ -57,10 +57,102 @@ namespace ConsoleApp3
     //Dynamic or Run-time
 
     //Static or Compile time
-    // - Method Overloading
+    // - Method Overloading - same name with diff param and return type
 
     //Dynamic or Run-time
-    // - Method Overriding
+    // - Method Overriding - same name with same parama and same return type but in diffrent class(base/child class)
+    // virtual and override keyword to archive this funcitionality
+
+    //Partial - Same name class in diffrent source file
+    //While compile code - common class will be created
+
+    //Sealed Modifier
+    //restricts the inheritance feature in OOP
+
+    //Constructor - While create a object of class, constructor will be called
+    //Same name of class and no return type 
+    //Types:
+    //1. Default - without any parameters
+    //2. parameterized - with parameters
+    //3. copy - copy contains with same class
+    //4. static
+    //  - create only one static constructor
+    //  - must be parameterless
+    //  - will be invoke only once at the time of class loading
+    //  - no access modifier in static constructor
+    //5. private - 
+    //  - using a private constructor we can not create a object from outside of class.
+
+    //Static Class
+    // we can not create a object
+    // inside static class - all members will be static
+    // can not create constructor (IMP)
+
+    static class Static_Class
+    {
+        public static int Id { get; set; }
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        public static bool IsEmailValid(string email)
+        {
+            //logic
+            // if email no valid
+            //return false;
+            return true;
+        }
+    }
+
+    class Static_Polymorphism
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        public int Add(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+    }
+
+    sealed class PQR
+    {
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
+
+    //we can not inherite PQR because it's sealed modifier
+    class XYZ //:PQR
+    {
+
+    }
+
+    class Dynamic_Polymorphism_Base
+    {
+        public virtual int Add(int a, int b)
+        {
+            return a + b;
+        }
+    }
+    class Dynamic_Polymorphism_Derived_One : Dynamic_Polymorphism_Base
+    {
+        public override int Add(int a, int b)
+        {
+            return a + b * (50);
+        }
+    }
+    class Dynamic_Polymorphism_Derived : Dynamic_Polymorphism_Base
+    {
+        public override int Add(int a, int b)
+        {
+            return a + b * (100);
+        }
+    }
 
     class Abstraction_A
     {
@@ -188,6 +280,28 @@ namespace ConsoleApp3
         public string ID { get; set; }
     }
 
+    public class Class_Constructor
+    {
+        public Class_Constructor()
+        {
+            Console.WriteLine("Default construtor is called");
+        }
+
+        public Class_Constructor(string abc)
+        {
+            Console.WriteLine("param construtor is called" + abc);
+        }
+        public Class_Constructor(string abc, string xyz)
+        {
+            Console.WriteLine("param construtor is called" + abc);
+        }
+
+        static Class_Constructor()
+        {
+            Console.WriteLine("static construtor is called");
+        }
+    }
+
     class OOPS
     {
         static void Main(string[] args)
@@ -223,6 +337,25 @@ namespace ConsoleApp3
 
             Abstraction_A abstraction_A = new Abstraction_A();
             abstraction_A.SendEmail();
+
+            Static_Polymorphism static_Polymorphism = new Static_Polymorphism();
+            static_Polymorphism.Add(2, 3, 4);
+
+            Dynamic_Polymorphism_Derived dynamic_Polymorphism_Derived = new Dynamic_Polymorphism_Derived();
+            dynamic_Polymorphism_Derived.Add(2, 3);
+
+            PartialClass_One partialClass_One = new PartialClass_One();
+            //partialClass_One.ID = 1;
+
+            Class_Constructor class_Construtor = new Class_Constructor();
+            //which constructor will call first?
+            //first static and then default
+
+            Class_Constructor class_Construtor1 = new Class_Constructor("hello");
+
+            //Static_Class objS = new Static_Class(); // we cann't do like this
+            int returnSum = Static_Class.Add(2, 3);
+            bool isValid = Static_Class.IsEmailValid("showItDotNet@gmail.com");
         }
     }
 }
