@@ -127,6 +127,12 @@
 //            string lower = strLowerUpper?.ToLower();
 //            string upper = strLowerUpper?.ToUpper();
 
+//            string newStr = "Hello";
+//            string abc2StrNew = newStr.Substring(0, 1); 
+//            //string abc2StrNew = newStr.Substring(0, 2); 
+//            //string abc2StrNew = newStr.Substring(0, 3); 
+
+
 //            Console.ReadLine();
 
 //        }
